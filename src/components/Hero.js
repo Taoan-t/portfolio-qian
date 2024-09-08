@@ -64,12 +64,14 @@ const Hero = () => {
   /* Data animation */
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 2000;
 
   const tick = useCallback(() => {
+    const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
     let updateText = isDeleting
@@ -89,7 +91,7 @@ const Hero = () => {
       setLoopNum(loopNum + 1);
       setDelta(500);
     }
-  }, [isDeleting, loopNum, period, text, toRotate]);
+  }, [isDeleting, loopNum, period, text]);
 
   useEffect(() => {
     let ticker = setInterval(() => {
