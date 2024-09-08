@@ -46,7 +46,7 @@ const Header = () => {
   return (
     <header className={styles.header} id="header" ref={headerRef}>
       <nav className={`${styles.nav} ${styles.container}`}>
-        <a href="#" className={styles["nav__logo"]}>
+        <a href="#home" className={styles["nav__logo"]}>
           <RiLeafLine />
           <span>Qian Tang</span>
         </a>

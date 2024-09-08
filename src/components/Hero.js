@@ -6,11 +6,11 @@ import "animate.css";
 import TrackVisibility from "react-on-screen";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 import styles from "./Hero.module.css";
 import bg from "../assets/img/hero-bg.jfif";
-import img1 from "../assets/img/hero-cherry-blossom.png";
+// import img1 from "../assets/img/hero-cherry-blossom.png";
 import img2 from "../assets/img/hero-boat.png";
 import img3 from "../assets/img/hero-sun.png";
 
@@ -69,17 +69,7 @@ const Hero = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 2000;
 
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-
-    return () => {
-      clearInterval(ticker);
-    };
-  }, [text]);
-
-  const tick = () => {
+  const tick = useCallback(() => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
     let updateText = isDeleting
@@ -99,11 +89,26 @@ const Hero = () => {
       setLoopNum(loopNum + 1);
       setDelta(500);
     }
-  };
+  }, [isDeleting, loopNum, period, text, toRotate]);
+
+  useEffect(() => {
+    let ticker = setInterval(() => {
+      tick();
+    }, delta);
+
+    return () => {
+      clearInterval(ticker);
+    };
+  }, [text, delta, tick]);
 
   return (
     <section className={styles.hero} id="home">
-      <img ref={bgRef} src={bg} alt="image" className={styles["hero__bg"]} />
+      <img
+        ref={bgRef}
+        src={bg}
+        alt="background"
+        className={styles["hero__bg"]}
+      />
 
       <div className={`${styles["hero__container"]} ${styles.container}`}>
         <div ref={dataRef} className={styles["hero__data"]}>

@@ -1,5 +1,5 @@
 import { Col } from "react-bootstrap";
-import { RiGithubFill, RiApps2Line } from "@remixicon/react";
+// import { RiGithubFill, RiApps2Line } from "@remixicon/react";
 import styles from "./ProjectCard.module.css";
 
 const ProjectCard = ({ title, description, imgUrl, projUrl }) => {
