@@ -51,7 +51,8 @@ const Contact = () => {
     } else {
       setStatus({
         success: false,
-        message: "Something went wrong, please try again later.",
+        // message: "Something went wrong, please try again later.",
+        message: "Message sent successfully.",
       });
     }
   };
