@@ -28,7 +28,13 @@ const Contact = () => {
 
     setButtonText("Sending...");
 
-    let response = await fetch("http://localhost:5000/contact", {
+    // let response = await fetch("http://localhost:5000/contact", {
+    //   method: "post",
+    //   headers: { "Content-Type": "Application/json;charset=utf-8" },
+    //   body: JSON.stringify(formDetails),
+    // });
+
+    let response = await fetch("/.netlify/functions/contact", {
       method: "post",
       headers: { "Content-Type": "Application/json;charset=utf-8" },
       body: JSON.stringify(formDetails),
