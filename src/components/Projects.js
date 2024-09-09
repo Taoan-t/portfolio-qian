@@ -1,10 +1,8 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import ProjectCard from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
-import sapProjImg1 from "../assets/img/calculator-app.PNG";
-import sapProjImg2 from "../assets/img/task-manager-app.PNG";
+import wonderLearn from "../assets/img/project-img1.jpg";
+import calculator from "../assets/img/project-img2.jpg";
+import taskManager from "../assets/img/project-img3.jpg";
 // import background from "../assets/img/background.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -12,57 +10,64 @@ import TrackVisibility from "react-on-screen";
 const Projects = () => {
   const webappProjects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "WonderLearn Kids",
+      description: "A responsive website for a kids learning center",
+      imgUrl: wonderLearn,
+      projUrl: "https://wonderlearnkids.netlify.app/",
     },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-  ];
-
-  const SPAProjects = [
     {
       title: "Calculator App",
       description: "A calculator with light mode and dark mode",
-      imgUrl: sapProjImg1,
+      imgUrl: calculator,
       projUrl: "https://calculator-qian.netlify.app/",
     },
     {
       title: "Task Manager App",
       description: "A task manager app with custom theme",
-      imgUrl: sapProjImg2,
+      imgUrl: taskManager,
+      projUrl: "https://taskmanager-qian.netlify.app",
+    },
+  ];
+
+  const SPAProjects = [
+    {
+      title: "WonderLearn Kids",
+      description: "A responsive website for a kids learning center",
+      imgUrl: wonderLearn,
+      projUrl: "https://wonderlearnkids.netlify.app/",
+    },
+    {
+      title: "Calculator App",
+      description: "A calculator with light mode and dark mode",
+      imgUrl: calculator,
+      projUrl: "https://calculator-qian.netlify.app/",
+    },
+    {
+      title: "Task Manager App",
+      description: "A task manager app with custom theme",
+      imgUrl: taskManager,
       projUrl: "https://taskmanager-qian.netlify.app",
     },
   ];
 
   const RDProjects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "WonderLearn Kids",
+      description: "A responsive website for a kids learning center",
+      imgUrl: wonderLearn,
+      projUrl: "https://wonderlearnkids.netlify.app/",
+    },
+    {
+      title: "Calculator App",
+      description: "A calculator with light mode and dark mode",
+      imgUrl: calculator,
+      projUrl: "https://calculator-qian.netlify.app/",
+    },
+    {
+      title: "Task Manager App",
+      description: "A task manager app with custom theme",
+      imgUrl: taskManager,
+      projUrl: "https://taskmanager-qian.netlify.app",
     },
   ];
 
@@ -82,13 +87,13 @@ const Projects = () => {
                   <div className="header">
                     <h1>My Projects</h1>
                   </div>
-                  <p>
+                  {/* <p>
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
                     standard dummy text ever since the 1500s, when an unknown
                     printer took a galley of type and scrambled it to make a
                     type specimen book.
-                  </p>
+                  </p> */}
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav
                       variant="pills"
