@@ -103,6 +103,16 @@ const Hero = () => {
     };
   }, [text, delta, tick]);
 
+  /*=============== Connect button ===============*/
+  function handleConnectBtn() {
+    const connectSection = document.getElementById("connect");
+
+    if (connectSection) {
+      window.location.hash = "#connect";
+      connectSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   return (
     <section className={styles.hero} id="home">
       <img
@@ -126,8 +136,13 @@ const Hero = () => {
                   <p>Hi I'm Qian Tang</p>
                   <span className={styles.wrap}> {text}</span>
                 </h1>
-                <p className={styles.introduction}>Breif Introduction</p>
-                <button onClick={() => console.log("connect")}>
+                <p className={styles.introduction}>
+                  I am a passionate developer with experience in creating
+                  dynamic and responsive web applications. Feel free to explore
+                  my portfolio and connect with me to discuss how we can work
+                  together!
+                </p>
+                <button onClick={handleConnectBtn}>
                   Let's connect <ArrowRightCircle size={25} />
                 </button>
               </div>
@@ -143,13 +158,6 @@ const Hero = () => {
         </div>
 
         <div className={styles["hero__images"]}>
-          {/* <img
-            ref={cherryRef}
-            src={img1}
-            alt="cherry"
-            className={styles["hero__img-1"]}
-          /> */}
-
           <img
             ref={boatRef}
             src={img2}

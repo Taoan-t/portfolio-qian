@@ -14,7 +14,7 @@ const Header = () => {
 
   const blurHeader = () => {
     const header = headerRef.current;
-    console.log(header);
+
     if (header) {
       if (window.scrollY >= 50) {
         header.classList.add(`${styles["blur-header"]}`);
@@ -41,6 +41,16 @@ const Header = () => {
 
   function closeMenu() {
     setShow(false);
+  }
+
+  /*=============== Connect button ===============*/
+  function handleConnectBtn() {
+    const connectSection = document.getElementById("connect");
+
+    if (connectSection) {
+      window.location.hash = "#connect";
+      connectSection.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   return (
@@ -117,7 +127,7 @@ const Header = () => {
               <RiGithubFill className={styles.icon} />
             </a>
           </div>
-          <button className="vvd" onClick={() => console.log("connect")}>
+          <button className="vvd" onClick={handleConnectBtn}>
             <span>Let's connect</span>
           </button>
         </span>
